@@ -1,14 +1,9 @@
 package dto;
 
-import java.io.Serializable;
-
 // 모델 클래스
 // JSP : 자바빈즈 (getter/setter, 기본 생성자, Serializable)
-public class Product implements Serializable {
-   
-	private static final long serialVersionUID = 5058259226693628378L;
-	
-	private String productId;
+public class Product {
+    private String productId;
     private String name;
     private int unitPrice;
     private String description;
@@ -17,7 +12,7 @@ public class Product implements Serializable {
     private long unitsInStock;
     private String condition;
 
-    public Product() {};
+    // public Product() {};
 
     public Product(String productId, String name, int unitPrice) {
         this.productId = productId;
@@ -89,12 +84,12 @@ public class Product implements Serializable {
         this.condition = condition;
     }
 
-    @Override
-    public String toString() {
-        return "Product [productId=" + productId + ", name=" + name + ", unitPrice=" + unitPrice
-                + ", description=" + description + ", manufacturer=" + manufacturer + ", category="
-                + category + ", unitsInStock=" + unitsInStock + ", condition=" + condition + "]";
-    }
+    // @Override
+    // public String toString() {
+    // return "Product [productId=" + productId + ", name=" + name + ", unitPrice=" + unitPrice
+    // + ", description=" + description + ", manufacturer=" + manufacturer + ", category="
+    // + category + ", unitsInStock=" + unitsInStock + ", condition=" + condition + "]";
+    // }
 
 
 
