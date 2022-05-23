@@ -1,10 +1,10 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="dto.Product" %>
 <!-- session 서버측에 저장 -->
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="session" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +26,9 @@
       </div>
     </div>
     <%
+    out.println(session.getAttribute("food"));
+    
+    ProductRepository repository = ProductRepository.getInstance();
     List<Product> products = repository.getAllProducts();   
     %>
     <div class="container">
@@ -36,9 +39,9 @@
 	       <div class="col-md-4">
 	           <h3><%= product.getName() %></h3>
 	           <p><%= product.getDescription() %></p>
-	           <p><%= product.getUnitPrice()+"원"%></p>
+	           <p><%= product.getUnitPrice() %>원</p>
 	           <p>
-	               <a class="btn btn-info" role="button" href="./product.jsp?id=<%= product.getProductId() %>">
+	               <a class="btn btn-secondary" role="button" href="./product.jsp?id=<%= product.getProductId() %>">
 	                   상세 정보 &raquo;
 	               </a>
                </p>

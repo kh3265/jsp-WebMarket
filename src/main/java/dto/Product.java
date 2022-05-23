@@ -1,7 +1,6 @@
 package dto;
 
 // 모델 클래스
-// JSP : 자바빈즈 (getter/setter, 기본 생성자, Serializable)
 public class Product {
     private String productId;
     private String name;
@@ -12,7 +11,9 @@ public class Product {
     private long unitsInStock;
     private String condition;
 
-    // public Product() {};
+    public static void main(String[] args) {
+        Product product = new Product(null, null, 0);
+    }
 
     public Product(String productId, String name, int unitPrice) {
         this.productId = productId;
